@@ -1,0 +1,1 @@
+Initial README for CSCD349 Design Patterns Winter 2018 with Professor Tom Capaul
