@@ -8,7 +8,7 @@ Include a UML class diagram (as a .pdf) that represents your class relationships
 While we will discuss them in class, an excellent tutorial on the basics of class diagrams lives here: http://www.agilemodeling.com/artifacts/classDiagram.htm (Links to an external site.)Links to an external site.
 
 Here’s a class containing the Java main method to help you on your way.  Note that the contents of this class are not exhaustive with respect to your assignment.  More specifically, add items to the main method to show dynamic swapping of behaviors.  
-
+```
 public class GuitarHero {
     public static void main(String[] args) {
         GameCharacter player1 = new GameCharacterSlash(); //note that constructor could be designed to accept initial behaviors
@@ -21,7 +21,7 @@ public class GuitarHero {
         //add code below to show the swapping of behaviors
     }
 }
-
+```
 Hint1: You should use the Java Duck example from Chapter 1 of HFDP.
 Hint2: It helps if you draw a class diagram *before* you start coding. 
 
