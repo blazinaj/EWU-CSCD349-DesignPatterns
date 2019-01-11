@@ -1,29 +1,36 @@
-Assignment 1: Strategy Pattern
-Jimi Hendrix Cartoon Picture     Telecaster Tux
+As with assignment 1, develop a simple set of Java/C# classes using the Observer pattern to represent the following scenario:
 
-The upcoming Guitar Hero VIII: Legends of Rock needs a player configuration system. Guitar Hero VIII lets you play three different characters (Slash, Jimi Hendrix, and Angus Young). Each character can use one of three different guitars (Gibson SG, Fender Telecaster or Gibson Flying V) as well as perform a unique solo act (Put the Guitar on Fire, Jump off the Stage, Smash the Guitar).  Implement a player configuration system in Java or C# using the Strategy design pattern.  You should have separate classes to represent each of the components specified.  
- 
+In the land of Middle Earth battle wages between good and bad.  On the side of 'good' are Hobbits, Elves, Dwarves, and Men.  On the side of 'bad' are the wizard Saruman and the Witch King of Angmar (leader of the Nazgul).  The ever watching Eye of Sauron is always on the lookout for the agents of 'good'.  Saruman and the Witch King would like to be notified any time the Eye of Sauron spots one of the good guys.
 
-Include a UML class diagram (as a .pdf) that represents your class relationships as part of your submission.  You are free to use any editing tools you wish.  Eclipse has a nice UML class diagram tool that will even generate the UML based on existing code.  Note however that it does not always build the class diagram correctly -- you should stay away from this tool until you have a good understanding of the components of a UML class diagram.  A reasonably good UML drawing program is Draw.IO (There will be a demo of this in class).  TinyUML is also pretty good.  You are welcome to use whatever you like *as long as it supports the basic UML symbols required for class diagrams -- we will go over these in class*. 
-While we will discuss them in class, an excellent tutorial on the basics of class diagrams lives here: http://www.agilemodeling.com/artifacts/classDiagram.htm (Links to an external site.)Links to an external site.
-
-Here’s a class containing the Java main method to help you on your way.  Note that the contents of this class are not exhaustive with respect to your assignment.  More specifically, add items to the main method to show dynamic swapping of behaviors.  
+Use the Observer pattern to model the above.  Properly utilize Java's Observer interface and Observable class as part of your implementation.  If you use C#, utilize the .NET counterparts (IObservable and IObserver).  Use the tester class given below as a starting point for your design (you may add more to the tester as necessary based on your solution to this problem).  Follow the Weather Data example from HFDP to aid you in your task.  Turn in a zip that contains your source files and a UML representation (.pdf required) of the classes and interfaces in your design.
 ```
-public class GuitarHero {
+public class TestSauronEye {
     public static void main(String[] args) {
-        GameCharacter player1 = new GameCharacterSlash(); //note that constructor could be designed to accept initial behaviors
-        GameCharacter player2 = new GameCharacterHendrix();
-        player1.playGuitar();
-        player2.playGuitar();
-        player1.playSolo();
-        player2.playSolo();
 
-        //add code below to show the swapping of behaviors
-    }
-}
+        EyeOfSauron eye = new EyeOfSauron();
+        BadGuy saruman = new BadGuy(eye, "Saruman");
+        BadGuy witchKing= new BadGuy(eye, "Witch King");
+        eye.setEnemies(1, 1, 2, 0); //hobbits, elves, dwarves, men -- BTW, this is HORRIBLE coding style and a bad code smell
+        //message should be displayed from Saruman and Witch Kingthat they know about 1 hobbit, 1 elf, 2 dwarves
+        
+        saruman.defeated(); //Saruman is no longer registered with the Eye
+        eye.setEnemies(4, 2, 2, 100);
+        //only the Witch King reports on the enemies
+
+    }//end main
+}//end class
 ```
-Hint1: You should use the Java Duck example from Chapter 1 of HFDP.
-Hint2: It helps if you draw a class diagram *before* you start coding. 
-
-
-Your submission must include .java/.cs files and the .pdf that contains the UML representation of your classes.  These items must be placed in a .zip file that is named with your name, followed by cscd349as1 (e.g. capaultom_cscd349as1.zip)
+Rubric
+Observer Rubric
+Observer Rubric
+Criteria	Ratings	Pts
+This criterion is linked to a Learning Outcome UML Class Diagram
+.pdf format, proper symbols used for class relationships, visibility symbols used for fields and methods, labels for <<interface>> and <<abstract>> classes
+8.0 pts
+This criterion is linked to a Learning Outcome Source code
+implements required Observer and Observable, fields are declared with private (or if necessary protected) visibility, solution allows for registering, unregistering of observers and subject properly notifies observers
+12.0 pts
+This criterion is linked to a Learning Outcome Misc
+proper files submitted, code clean and easy to follow with good naming conventions, etc.
+5.0 pts
+Total Points: 25.0
