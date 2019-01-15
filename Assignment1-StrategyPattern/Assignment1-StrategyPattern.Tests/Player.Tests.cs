@@ -48,10 +48,10 @@ namespace Assignment1_StrategyPattern.Tests
             Player slash = new PlayerSlash();
             Player jimi = new PlayerJimiHendrix();
             Player angus = new PlayerAngusYoung();
-
-            slash.GuitarBehavior = new GuitarFenderTelecaster();
-            jimi.GuitarBehavior = new GuitarGibsonFlyingV();
-            angus.GuitarBehavior = new GuitarGibsonSG();
+            
+            slash.SwapGuitarBehavior(new GuitarFenderTelecaster());
+            jimi.SwapGuitarBehavior(new GuitarGibsonFlyingV());
+            angus.SwapGuitarBehavior(new GuitarGibsonSG());
             
             Assert.AreEqual("Plays Fender Telecaster Guitar", slash.PlayGuitar());
             Assert.AreEqual("Plays Gibson Flying V Guitar", jimi.PlayGuitar());
@@ -64,10 +64,10 @@ namespace Assignment1_StrategyPattern.Tests
             Player slash = new PlayerSlash();
             Player jimi = new PlayerJimiHendrix();
             Player angus = new PlayerAngusYoung();
-
-            slash.SoloBehavior = new SoloGuitarOnFire();
-            jimi.SoloBehavior = new SoloJumpOffStage();
-            angus.SoloBehavior = new SoloSmashGuitar();
+            
+            slash.SwapSoloBehavior(new SoloGuitarOnFire());
+            jimi.SwapSoloBehavior(new SoloJumpOffStage());
+            angus.SwapSoloBehavior(new SoloSmashGuitar());
 
             Assert.AreEqual("Lights the guitar on fire", slash.PerformSolo());
             Assert.AreEqual("Jumps off the stage", jimi.PerformSolo());

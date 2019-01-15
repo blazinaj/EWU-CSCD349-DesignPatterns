@@ -5,16 +5,16 @@ namespace Assignment1_StrategyPattern
 {
     public abstract class Player
     {
-        public ISoloBehavior SoloBehavior { get; set; }
-        public IGuitarBehavior GuitarBehavior { get; set; }
+        private ISoloBehavior SoloBehavior { get; set; }
+        private IGuitarBehavior GuitarBehavior { get; set; }
         
-        public Player()
+        protected Player()
         {
             SoloBehavior = new SoloNoTalent();
             GuitarBehavior = new GuitarNoTalent();
         }
 
-        public Player(ISoloBehavior sb, IGuitarBehavior gb)
+        protected Player(ISoloBehavior sb, IGuitarBehavior gb)
         {
             SoloBehavior = sb;
             GuitarBehavior = gb;
@@ -28,6 +28,16 @@ namespace Assignment1_StrategyPattern
         public string PlayGuitar()
         {
             return GuitarBehavior.PlayGuitar();
+        }
+
+        public void SwapGuitarBehavior(IGuitarBehavior gb)
+        {
+            GuitarBehavior = gb;
+        }
+
+        public void SwapSoloBehavior(ISoloBehavior sb)
+        {
+            SoloBehavior = sb;
         }
 
         public abstract void ShoutName();

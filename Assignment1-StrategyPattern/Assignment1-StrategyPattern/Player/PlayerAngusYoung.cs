@@ -9,12 +9,10 @@ namespace Assignment1_StrategyPattern
     public class PlayerAngusYoung : Player
     {
         public PlayerAngusYoung()
-        {
-        }
+        {}
 
         public PlayerAngusYoung(ISoloBehavior sb, IGuitarBehavior gb) : base(sb, gb)
-        {
-        }
+        {}
 
         public override void ShoutName()
         {
