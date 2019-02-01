@@ -7,9 +7,9 @@ namespace Assignment3_Decorator
     public class DouglasFir : Tree
     {
         public int cost = 30;
+        public string description = "Douglas Fir";
         public DouglasFir()
         {
-            //How do I override the parent class Property called "Description"??
             Description = "Douglas Fir";
         }
 
