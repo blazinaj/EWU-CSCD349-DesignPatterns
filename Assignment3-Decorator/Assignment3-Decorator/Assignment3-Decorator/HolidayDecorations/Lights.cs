@@ -6,8 +6,8 @@ namespace Assignment3_Decorator.HolidayDecoration
 {
     public class Lights : HolidayItem
     {
-        public Tree tree;
-        public int cost = 5;
+        private Tree tree;
+        private int cost = 5;
 
         public Lights(Tree tree)
         {

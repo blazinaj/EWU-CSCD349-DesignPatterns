@@ -12,7 +12,7 @@ namespace Assignment3_Decorator.Tests
         {
             Tree tree = new DouglasFir();
 
-            Assert.AreEqual(0, tree.TotalCost);
+            Assert.AreEqual(30, tree.Cost());
         }
 
         [TestMethod]

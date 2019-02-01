@@ -4,13 +4,17 @@ namespace Assignment3_Decorator
 {
     public abstract class Tree
     {
-        public int TotalCost = 0;
-        public string Description = "Unknown Tree";
-        public bool HasStar = false;
+        protected string Description = "Unknown Tree";
+        protected bool HasStar = false;
 
         public string GetDescription()
         {
             return Description;
+        }
+
+        public string GetStar()
+        {
+            return HasStar ? "Tree Already Has A Star" : "Star";
         }
 
         public abstract int Cost();

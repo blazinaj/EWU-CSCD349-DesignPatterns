@@ -6,7 +6,7 @@ namespace Assignment3_Decorator.HolidayDecoration
 {
     public class Ruffles : HolidayItem
     {
-        public Tree tree;
+        private Tree tree;
         public int cost = 1;
         public Ruffles(Tree tree)
         {

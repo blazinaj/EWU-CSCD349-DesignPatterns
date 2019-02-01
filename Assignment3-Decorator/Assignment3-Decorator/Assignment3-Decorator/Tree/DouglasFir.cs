@@ -6,8 +6,8 @@ namespace Assignment3_Decorator
 {
     public class DouglasFir : Tree
     {
-        public int cost = 30;
-        public string description = "Douglas Fir";
+        private int cost = 30;
+        string description = "Douglas Fir";
         public DouglasFir()
         {
             Description = "Douglas Fir";
