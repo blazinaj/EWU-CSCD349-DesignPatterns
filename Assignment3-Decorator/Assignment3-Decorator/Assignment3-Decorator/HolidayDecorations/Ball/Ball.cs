@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Assignment3_Decorator
 {
-    public abstract class Ball : HolidayDecoration
+    public abstract class Ball : HolidayItem
     {
     }
 }

@@ -4,7 +4,8 @@ using System.Text;
 
 namespace Assignment3_Decorator
 {
-    public class SilverBall : Ball
+    public abstract class HolidayItem : Tree
     {
+        public abstract new string GetDescription();
     }
 }
