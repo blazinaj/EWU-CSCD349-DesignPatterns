@@ -6,14 +6,20 @@ namespace Assignment3_Decorator
 {
     public class BlueBall : Ball
     {
+        private Tree tree;
+        private int cost = 2;
+        public BlueBall(Tree tree)
+        {
+            this.tree = tree;
+        }
         public override int Cost()
         {
-            throw new NotImplementedException();
+            return cost + tree.Cost();
         }
 
         public override string GetDescription()
         {
-            throw new NotImplementedException();
+            return tree.GetDescription() + ", Blue Ball";
         }
     }
 }

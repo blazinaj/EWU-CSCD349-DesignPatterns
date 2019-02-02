@@ -13,14 +13,14 @@ namespace Assignment3_Decorator.HolidayDecoration
             this.tree = tree;
         }
 
-        public override string GetDescription()
-        {
-            return tree.GetDescription() + ", Ruffles";
-        }
-
         public override int Cost()
         {
             return cost + tree.Cost();
+        }
+
+        public override string GetDescription()
+        {
+            return tree.GetDescription() + ", Ruffles";
         }
     }
 }

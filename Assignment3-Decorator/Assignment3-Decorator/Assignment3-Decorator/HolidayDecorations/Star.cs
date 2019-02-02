@@ -7,20 +7,33 @@ namespace Assignment3_Decorator.HolidayDecoration
     public class Star : HolidayItem
     {
         public Tree tree;
-        public int cost = 1;
+        public int cost = 4;
+        public string Des;
         public Star(Tree tree)
         {
             this.tree = tree;
-        }
-
-        public override string GetDescription()
-        {
-            return tree.GetDescription() + ", Star";
+            if (tree.GetDescription().Contains("Star"))
+            {
+                Des = tree.GetDescription();
+            }
+            else
+            Des = tree.GetDescription() + ", Star";
         }
 
         public override int Cost()
         {
-            return cost + tree.Cost();
+
+            if (tree.GetDescription().Contains("Star"))
+            {
+                return tree.Cost();
+            }
+            else
+                return cost + tree.Cost();
+        }
+
+        public override string GetDescription()
+        {
+            return Des;
         }
     }
 }

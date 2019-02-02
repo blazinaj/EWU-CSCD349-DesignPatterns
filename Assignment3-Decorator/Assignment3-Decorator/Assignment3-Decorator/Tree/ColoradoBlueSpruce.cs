@@ -9,9 +9,11 @@ namespace Assignment3_Decorator
         public int cost = 50;
         public ColoradoBlueSpruce()
         {
-            Description = "ColoradoBlueSpruce";
         }
-
+        public override string GetDescription()
+        {
+            return "Colorado Blue Spruce";
+        }
         public override int Cost()
         {
             return cost;

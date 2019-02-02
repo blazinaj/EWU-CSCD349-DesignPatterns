@@ -4,16 +4,23 @@ using System.Text;
 
 namespace Assignment3_Decorator
 {
-    public class SilverBall : Ball
+    public class RedBall : Ball
     {
+        private Tree tree;
+        private int cost = 1;
+
+        public RedBall(Tree tree)
+        {
+            this.tree = tree;
+        }
         public override int Cost()
         {
-            throw new NotImplementedException();
+            return cost + tree.Cost();
         }
 
         public override string GetDescription()
         {
-            throw new NotImplementedException();
+            return tree.GetDescription() + ", Red Ball";
         }
     }
 }

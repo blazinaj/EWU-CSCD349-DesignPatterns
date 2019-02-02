@@ -10,12 +10,16 @@ namespace Assignment3_Decorator
 
         public FraserFir()
         {
-            Description = "Fraser Fir";
         }
 
         public override int Cost()
         {
             return cost;
+        }
+
+        public override string GetDescription()
+        {
+            return "Fraser Fir";
         }
     }
 }

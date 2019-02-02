@@ -6,6 +6,5 @@ namespace Assignment3_Decorator
 {
     public abstract class HolidayItem : Tree
     {
-        public abstract new string GetDescription();
     }
 }

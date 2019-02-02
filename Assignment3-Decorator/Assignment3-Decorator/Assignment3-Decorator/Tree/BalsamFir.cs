@@ -9,7 +9,11 @@ namespace Assignment3_Decorator
         public int cost = 25;
         public BalsamFir()
         {
-            Description = "Balsam Fir";
+        }
+
+        public override string GetDescription()
+        {
+            return "Balsam Fir";
         }
 
         public override int Cost()
